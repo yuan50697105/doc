@@ -242,3 +242,27 @@
 # Rust
 
 # Ruby
+
+# IDE工具
+
+## 1.IDEA
+
+1. 配置
+   1. 忽略大小写
+2. maven配置
+3. gradle配置
+4. 常用插件
+   1. lombok
+   2. allsetter
+   3. mybatiscodehelperpro（付费）
+5. 快捷键
+   1. 
+
+## 2.Eclipse
+
+1. 配置
+2. maven
+3. gradle
+4. 常用插件
+5. 快捷键
+
