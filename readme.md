@@ -192,13 +192,32 @@
 ## 3.Java APP
 
 1. Spring
-   1. Spring MVC
-   2. Spring Boot
-   3. Spring Cloud
+   1. Spring
+      1. Spring MVC
+      2. Spring Boot
+      3. Spring Cloud
+   2. Mybatis
+   3. Hibernate
 2. Hadoop
+   1. HDFS
+   2. Yarn
+   3. MapReduce
+   4. HBASE
+   5. Hive
 3. Spark
-4. Android
-5. 其他扩展
+   1. Spark RDD
+   2. Spark SQL
+   3. Spark Straming
+4. Flink
+   1. Flink Stream
+   2. Flink SQL
+5. Android
+6. 其他扩展
+   1. Grails
+   2. Play
+   3. Helidon（Micro Profile）
+   4. Micronaut
+   5. quarkus
 
 ## 4.语言
 
@@ -211,6 +230,34 @@
 1. Maven
 2. Gradle
 
+# SQL学习
+
+1.介绍
+
+​	结构化查询语言，广泛应用于数据库软件中，用于查询统计增删改
+
+2.标准定义
+
+​	SQL的标准不是一直不变，现在新版本的标准中增加了JSON，Array，开窗函数等定义，但是并不是所有库都实现了
+
+3.学习
+
+1. 整体分成四个部分
+2. DCL 权限控制 这个很多是使用工具来做，不过Oracle要使用SQL配置，不同数据库完全不同
+3. DDL 结构定义 一般用工具做，还有关系生成公具做，不同数据库，总体一样，数据类型不一样
+4. DQL 查询统计 最常用的 select，不同数据库存在自己特异的查询统计函数
+5. DML 数据操作 也就是增删改
+
+4.常见数据库与相关
+
+1. 数据库：MySQL（标准SQL），Oracle（PLSQL+标准SQL）、SQL Server（TSQL+标准SQL）、PostgresSQL（PSPLSQL+标准SQL）、MariaDB（标准SQL）
+2. 仓库类：Hive
+3. 类SQL库：Cassandra
+
+5.误区
+
+1. 拥有SQL或者类SQL解析执行能力的数据库，都有自己特有的部分和公共基础的部分，基础实现都不同，部署方式也有差别
+
 # Linux学习
 
 1. 了解发行版
@@ -221,41 +268,116 @@
 
 # 持续集成
 
-自动构建 Jenkins
+## 1.自动构建 Jenkins
 
-容器化 docker
+## 2.容器化 docker
 
-容器编排 Kubernetes /Meaos
+## 3.容器编排 Kubernetes /Meaos
 
 # JS与前端学习
 
-1. HTML
-2. CSS
-3. JS与TS
-4. Node与Deno
-5. WASM
+## 1.HTML
+
+## 2.CSS
+
+## 3.JS与TS
+
+## 4.Node与Deno（Deno 目前没有发行，可能是下一代Node）
+
+### 	1.Commons JS
+
+### 	2.ES6 ES7 ES8
+
+1. 这个是个标准定义，但是并不是完全实现，语法很灵活，受不了
+
+### 	3.Express Koa
+
+### 	4.Vue
+
+### 	5.React
+
+### 	6.Angular
+
+## 5.WASM（第四标准，用于二进制传输）
+
+# Dart与Flutter
+
+## 1.介绍
+
+​	Flutter由谷歌开发的通用应用层框架，一套语法，多端开发，使用Dart语言
+
+# IOS与Swift
+
+## 1.介绍
+
+​	IOS是苹果开发的手机iPhone的操作系统，目前iPad使用的操作系统改名为iPad OS，电脑Mac系列成为Mac OS，Swift是由苹果自己开发的用于自己平台的开发语言，目前已经开源，Windows平台非官方支持
 
 # Python学习
 
+## 1.数据类型
+
+## 2.基础变量
+
+## 3.方法
+
+## 4.面向对象
+
+## 5.基础库
+
+## 6.web
+
+### 	1.Flask
+
+### 7.爬虫
+
+### 8.人工智能
+
+1. 关于人工智能为什么使用Python的误解，这个主要是Python在发展过程长期被用于数据科学计算，加上语法简单，产生了相关库特别多，但是Python几乎所有与人工智能相关的组件都是有更高性能的语言开发，加上Python的壳，所以Python常常被说成胶水语言
+
+### 9.数据科学
+
+1. 一般用于做报表用
+
+### 10.自动运维脚本
+
 # Golang学习
 
-# Rust
+### 1.介绍
 
-# Ruby
+​	由谷歌开发，开发人员为C语言作者，所以性能很高，是个用基础软件开发的语言，特别是多核心并发并行上有特殊之处，不过针对对象化、泛型、依赖管理是个劣势，主要是用于容器软件（Docker，Kubernetes )，区块链
+
+# Rust学习
+
+## 1.学习理由
+
+新语言，微软将用它重构基础组件，这个我看了评论确实不错，不过微软重构是自己在Rust 的基础上改进，就像微软喜欢Java，自己弄了个.Net，这个新语言的维护者就是C#的作者
+
+# Ruby学习
+
+## 1.学习理由
+
+​	这个语言和python基本一个性质，其实主要是Vue那边有个CSS框架
 
 # IDE工具
 
 ## 1.IDEA
 
-1. 配置
+1. ###### 配置
+
    1. 忽略大小写
+
 2. maven配置
+
 3. gradle配置
+
 4. 常用插件
+
    1. lombok
    2. allsetter
    3. mybatiscodehelperpro（付费）
+
 5. 快捷键
+
    1. 
 
 ## 2.Eclipse
