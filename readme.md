@@ -252,9 +252,9 @@
 4. 其他扩展
    1. Groovy与Grails（全栈开发框架）
    2. Scala与Play（全栈开发框架）
-   3. Helidon（Micro Profile）
-   4. Micronaut
-   5. quarkus
+   3. Helidon（Micro Profile 基于Java EE定制的微服务与云原生开发组件）
+   4. Micronaut（Grails作者做的微服务框架）
+   5. quarkus（基于Kubernetes 的Java微服务框架，由Kubernetes的运维组织制作）
 
 ## 4.语言
 
@@ -332,6 +332,8 @@
 
 ## 3.容器编排 Kubernetes /Meaos
 
+## 4.Serverless 无服务架构 Knative 、Istio、Kubernetes 
+
 # JS与前端学习
 
 ## 1.HTML
@@ -340,7 +342,12 @@
 
 ## 3.JS与TS
 
+1. JS Javascript
+2. TS TypeScript
+
 ## 4.Node与Deno（Deno 目前没有发行，可能是下一代Node）
+
+1. Node 基于Chrome V8 引擎制作的服务端JS运行环境
 
 ### 	1.Commons JS
 
@@ -349,6 +356,9 @@
 1. 这个是个标准定义，但是并不是完全实现，语法很灵活，受不了
 
 ### 	3.Express Koa
+
+1. Express Web开发框架
+2. Koa Web开发框架，Express 团队新作
 
 ### 	4.Vue
 
