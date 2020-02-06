@@ -26,38 +26,56 @@
 
 1. if
 
-   1. if
-   2. if (){}else{}
-   3. if (){}else if{}
+   1. 介绍使用boolean 结果，处理分支，注意一个if只有一个分支，if else只有两个分支
+   2. if(){}
+   3. if (){}else{}
+   4. if (){}else if{}
 
 2. switch
 
-   case
-
-   default
-
-   break
+   1. 一个多分支处理，不过建议使用枚举或者常量
+   2. case 条件，不过只能是固定条件
+   3. default 默认条件 ，只有case不能匹配到时才会执行
+   4. break 如果没有return 用于退出switch
 
    > switch注意事项
    >
    > 1. 自从JDK 1.7 开始 case可以使用字符串，但是不能使用封装类，请使用里面的API转换成关键字
    > 2. JDK 13 新增模式匹配功能，这个功能在很多语言中存在了，加上这个以后，可以很大程度上扩展语法
 
-### 1.3 循环
+### 1.3 循环	
 
-1. for(   ;    ;   )
-2. for(Object object : Iterable/Array)
-3. while(boolean)
-4. do{} while(boolean)
+1. 介绍，用于重复执行，一段代码
+2. for(   ;    ;   )
+3. foreach for(Object object : Iterable/Array)
+   1. Iterable是可迭代的统配，集合类中的List和Set都是可迭代
+   2. Array数组
+   3. foreach 不能再往遍历的数据中写入数据，也就是说foreach是只读的
+4. while(boolean)
+5. do{} while(boolean)
+6. break 跳出循环
+7. continue 跳过一次循环
 
 ### 1.4 方法（函数）
 
 1. void 无返回值
-2. 返回值为基础数据类型 封装类
-3. 返回值为封装类数组
-4. 返回值为封装集合
-5. 返回自定义类或者接口
-6. 返回自定义类或者接口数组或集合
+   1. void无参数
+   2. void 有参数
+      1. 一个参数
+      2. 多个固定参数
+      3. 不定项参数
+      4. 混合使用，不定项最多一个且在最后
+2. 有返回值
+   1. 返回值为基础数据类型和封装类
+   2. 返回值为封装类数组
+   3. 返回值为封装集合
+   4. 返回自定义类或者接口
+   5. 返回自定义类或者接口数组或集合
+   6. 参数处理
+      1. 一个参数
+      2. 多个固定参数
+      3. 不定项参数
+      4. 混合使用，不定项最多一个且在最后
 
 ### 1.5 类与接口
 
@@ -115,10 +133,12 @@
 
 3. IO类
 
-   1. 字节流
-   2. 字符流
-   3. 随机流
-   4. NIO与BIO（NIO非阻塞IO，BIO阻塞IO，我们常用的是阻塞IO，所以一般实际使用的时候，非常占用资源）
+   1. IO是两个部分，I-> Input，O->Output，
+   2. 使用注意 In和Out两个是相对概念，如果是程序往外输出就是Out，接收方就是In
+   3. 字节流 InputStream和OutputStream
+   4. 字符流 Reader和Writer
+   5. 随机流 
+   6. NIO与BIO（NIO非阻塞IO，BIO阻塞IO，我们常用的是阻塞IO，所以一般实际使用的时候，非常占用资源）（NIO部分我自己还没有学习）
 
 4. 线程
 
@@ -126,10 +146,11 @@
    2. Runnable
    3. Callable
    4. Future
+   5. JUC 并发工具
 
 5. socket（主要是TCP和UDP内容，还有基础工具类使用）
 
-6. GUI（基本不会学了）
+6. GUI（已过时，基本不会学了）
 
 7. JDBC
 
@@ -191,30 +212,46 @@
 
 ## 3.Java APP
 
-1. Spring
+1. Java Web
    1. Spring
-      1. Spring MVC
-      2. Spring Boot
-      3. Spring Cloud
-   2. Mybatis
-   3. Hibernate
-2. Hadoop
-   1. HDFS
-   2. Yarn
-   3. MapReduce
-   4. HBASE
-   5. Hive
-3. Spark
-   1. Spark RDD
-   2. Spark SQL
-   3. Spark Straming
-4. Flink
-   1. Flink Stream
-   2. Flink SQL
-5. Android
-6. 其他扩展
-   1. Grails
-   2. Play
+      1. Spring
+         1. Spring MVC
+         2. Spring Boot
+            1. Spring MVC
+            2. Spring Webflux
+         3. Spring Cloud
+            1. 微服务应用
+            2. Spring Cloud Data Flow ETL工具
+         4. Spring 生态圈
+            1. Spring Data
+            2. Spring Security
+            3. Spring Cache
+            4. Spring Session
+            5. Spring Task
+            6. Spring AMQP
+      2. Mybatis
+      3. Hibernate
+2. 大数据
+   1. Hadoop
+      1. HDFS
+      2. Yarn
+      3. MapReduce
+      4. HBASE
+      5. Hive
+   2. Spark
+      1. Scala API、Python API、Java API
+      2. Spark RDD
+      3. Spark SQL
+      4. Spark Straming
+   3. Flink
+      1. Java API 、Scala API
+      2. Flink Stream
+      3. Flink SQL
+3. Android
+   1. Java 和 Kotlin
+4. 其他扩展
+   1. Groovy与Grails（全栈开发框架）
+   2. Scala与Play（全栈开发框架）
    3. Helidon（Micro Profile）
    4. Micronaut
    5. quarkus
@@ -228,7 +265,28 @@
 ## 5.构建与依赖管理工具
 
 1. Maven
+   1. Maven使用
+      1. 创建项目
+      2. 生命周期
+      3. archtype
+      4. 插件
+      5. 多模块
+      6. 预配置
+   2. MVNW
+      1. 解决问题
+      2. 生成
+      3. 使用
 2. Gradle
+   1. Gradle使用
+      1. 创建项目
+      2. 生命周期
+      3. basic project
+      4. 插件
+      5. 多模块
+   2. Gradlew
+      1. 解决问题
+      2. 生成
+      3. 使用
 
 # SQL学习
 
