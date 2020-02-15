@@ -283,17 +283,102 @@
       2. 生成
       3. 使用
 
-## 6.框架内容
+## 6.框架与技术栈内容
 
-1. Hibernate
-   1. JPA
-2. Mybatis
-   1. Mybatis Mapper
-   2. Mybatis Plus
-   3. Mybatis Enhance
-   4. FastMybatis
-3. JOOQ
-4. Query DSL
+1. Spring
+   
+   1. Spring
+      1. 简介：一个用于快捷依赖注入的框架，核心内容是IOC（控制反转）和AOP（面向切面）
+      2. IOC：一个注入模式，核心是工厂模式和单例模式，这个有多种模式，如果不和MVC一起用可以有单例和原型模式，加入Web后可以用Session和Request
+      3. APO：核心是装饰器模式，用于整个方法执行过程的包装监控，经典使用就是MVC和事务处理
+      4. Reactor：Spring 5.0 新增技术栈，以观察者模式实现异步高吞吐量技术，不是直接提升性能，而且将并发能力提升
+   2. Spring WEB
+      1. Spring MVC
+         1. 简介：Spring中 Web模块扩展，可以直接实现HTTP访问，使用Servlet标准实现
+      2. Spring WebFlux
+         1. 简介：Spring中 Web模块扩展，可以直接实现HTTP访问，全新Reactor技术栈实现
+      3. 其他扩展
+         1. Struts
+   3. Spring JDBC与Spring ORM
+      1. 简介：Spring提供的基本关系数据库访问功能
+   4. Spring Data
+      1. 简介：Spring 在JDBC和ORM基础上增加的统一访问功能
+   5. Spring Cache与Spring Session
+      1. Spring Cache 
+         1. 简介：缓存抽象，用于数据缓存
+      2. Spring Session
+         1. 简介：用于Session管理控制
+   
+   1. Spring Security
+      1. 简介：Spring自己的权限框架，细粒度很高，可以与Spring Session无缝组合
+   2. Spring Boot
+      1. 简介：以约定大于配置方式实现自动化配置的方案，目前主要方案，提供可执行jar方式部署
+   3. Spring Cloud
+      1. 简介：在Spring Boot基础上扩展出来的微服务方案
+   4. Spring On K8S
+   
+2. Hibernate
+
+   1. 简介： 一个持久框架，提供常用数据库的快捷操作，提供分页列表操作，但是没有分页模型
+   2. JPA ：JPA是个Java 的标准，用于持久层实现，他的第一实现就是Hibernate，但是Hibernate也增加了自己的东西
+   3. Spring Data Jpa ：Spring Data 组件之一，在Jpa上封装
+
+3. Mybatis
+
+   1. 简介 一个持久层框架
+   2. Mybatis Mapper：Mybatis扩展 ，一个Mybatis单表操作框架，使用类似Mybatis 逆向工程的Example风格编程
+   3. Mybatis Plus： Mybatis 扩展，这个扩展做的应该算是非常好了，主要是集成了分页
+   4. Mybatis Enhance：Mybatis扩展，作者仿造Spring Data Jpa和QueryDSL 风格制作，需要使用生成器
+   5. FastMybatis： Mybatis 扩展，单表操作方便，提供分页功能，只限制为单表
+   6. PageHelper： Mybatis 分页助手，直接能在mybatis查询时实现分页，提供分页模型
+   7. SqlHelper：Mybatis 分页助手，可以转换为PageHelper 风格，提供Mybatis Plus集成
+   8. Pageable：Mybatis 分页助手 
+   9. 特殊用法 插件机制，可以实现自动添加功能
+   10. 类型处理器，比如JSON，Array的处理
+
+4. JOOQ
+
+   1. 简介：以Fluent API 风格进行数据库操作，跟使用SQL基本相同，提供分页列表，但是没有分页模型，只有Mysql和Postgres时免费使用，Spring Boot 提供自动配置
+
+5. Query DSL
+
+   1. 简介：一个通用安全查询框架，有JDBC，JPA等多个版本，其中Spring Data Jpa 提供扩展接口
+
+6. 数据库中间件
+
+   1. Apahce Sharding
+      1. 简介 一个数据分片框架
+      2. 使用 根据官方说明使用即可
+      3. bug 主键策略一直是个问题
+   2. MyCat
+
+7. Redis 
+
+8. MongoDB
+
+9. ElaticSearch
+
+10. CouchBase
+
+11. FluxDB
+
+12. Hadoop
+
+    1. 简介：通用计算分析，储存框架
+    2. 计算
+       1. MapReduce， 离线计算，模型已经过时，同时性能低
+       2. Hive，目前Hive已经基本放弃MapReduce了
+    3. 储存
+       1. HDFS， 分布式文件系统，可以多副本，一般用于大数据缓存，一次写入，多次读取
+       2. HBASE， 在HDFS基础上建立的高性能列族数据库
+       3. Hive， Hive可以说是计算也是一个结构化数据储存
+    4. ETL 数据抽取，转换、加载
+       1. Sqoop 分成两个版本，两个版本几乎完全不同，用于多个数据源直接ETL
+       2. Flume 日志收集ETL
+
+13. Spark
+
+14. Flink
 
 # SQL学习
 
@@ -323,13 +408,36 @@
 
 1. 拥有SQL或者类SQL解析执行能力的数据库，都有自己特有的部分和公共基础的部分，基础实现都不同，部署方式也有差别
 
+6.具体数据库
+
+1. MySQL
+   1. 最流行数据库
+   2. 功能实现基本按照标准来
+2. Oracle
+   1. 大型数据库代表，在高性能服务器上能够成分发挥性能，不过授权非常规
+   2. 功能强大
+3. SQL Server
+   1. 第三大数据库，由微软开发，在分布式上有点优势，应用与企业项目和工业项目多
+4. Postgres
+   1. 被称为最先进数据库，因为他是实现SQL标准最完善的，同时他是完全开源的，被称为开源的Oracle
+
 # Linux学习
 
 1. 了解发行版
+   1. RH 红帽
+   2. Federa  红帽弄得专门用于云原生的发行版
+   3. CentOS 红帽源码重编版本
+   4. Debian 
+   5. Ubuntu 最流行的桌面Linux
+   6. 区别红帽和Debian是两个不同的大发行版，因为内部实现不相同
 2. 基础命令
+   1. 
 3. 安装软件
+   1. 
 4. 账户与授权
+   1. 
 5. 打包镜像，不过现在主要是容器化了
+   1. 
 
 # 持续集成
 
