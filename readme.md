@@ -253,35 +253,111 @@
 
 ## 4.语言
 
-1. Kotlin
-2. Scala
-3. Groovy
+1. 关于Java是分成Java语言和JVM两个部分只要是能编译成JVM使用的字节码就能使用使用JVM环境
+2. Kotlin
+   1. 由目前最流行的Java IDE工具IDEA的开发商Jetbrain开发的语言，推出之后得到谷歌深度支持成为安卓第一开发语言，而且Spring官方也深度支持，另外很多其他框架也在深度支持，所以现在做java的不单单是学习Java一种语言了，必要时候也得学习下Kotlin，他和Java是100%兼容的，所以基本上能够无缝使用java的依赖库，可以使用Maven和Gradle构建环境，不过比较建议使用Gradle构建
+   2. 相比Java 最大的进步主要是协程结束，还有一些灵活定义
+3. Scala
+   1. 一个高扩展JVM语言，其实还有JS版本，不过主要是使用JVM版本，这个语言灵活度很高，不过有些地方概念深，不好入门，入门的话灵活度很强，就是概念多，灵活度高，所以入门难，主要是用在Spark分布式计算上
+   2. 优势是高扩展
+4. Groovy
+   1. JVM脚本语言，作者也是看着Java表达繁琐，所以想像JS那样简单直接，所以做了Groovy，不过现在Groovy这个语言用的很少了
+   2. 加入函数式语法和模板语法
 
 ## 5.构建与依赖管理工具
 
 1. Maven
    1. Maven使用
       1. 创建项目
+         1. basic
+            1. 基础版本
+         2. archtype
+            1. 模板版本
+            2. 常用
+               1. WEB
       2. 生命周期
-      3. archtype
-      4. 插件
-      5. 多模块
-      6. 预配置
+         1. 三个
+            1. 清理生命周期
+               1. pre-clean 预清理
+               2. clean 清理
+               3. post-clean 清理后
+            2. 默认生命周期
+               1. process-resources 复制并处理资源文件，至目标目录，准备打包。
+               2. compile 编译项目的源代码。
+               3. process-test-resources 复制并处理资源文件，至目标测试目录
+               4. test-compile 编译测试源代码
+               5. test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。
+               6. package 接受编译好的代码，打包成可发布的格式 
+               7. install 将包安装至本地仓库，以让其它项目依赖
+               8. deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享。
+            3. 站点生命周期
+               1. pre-site（预站点）：执行一些需要在生成站点文档之前的工作。
+               2. site（站点）： 生成项目的站点文档。
+               3. post-site（后站点）：执行一些需要在生成站点文档之后完成的工作，并且为部署做准备。
+               4. site-deploy（站点部署）：将生成的站点文档部署到特定的服务器上
+         2. 插件
+            1. 有些通用操作有可以使用专用插件，这个也是配合生命周期来的，maven自己也提供了很多默认的插件
+            2. 默认插件
+               1. clean
+               2. compile 编译插件，提供基本的编译功能，比如java版本
+               3. package 打包
+               4. jar 打包成jar包，jar分成lib和exe两种类型，exe的要配置mainClass
+               5. war javaweb特制的jar，现在基本上没有用的了
+               6. shade 定制打包
+               7. denpendency 依赖管理
+               8. install 将package打包以后的jar放入本地maven仓库
+               9. deploy 将本地仓库的jar推送到远程仓库，一般用于企业仓库私服
+            3. 常用插件
+               1. versions 用于模块的版本控制，依赖升级等
+         3. 多模块
+            1. maven是支持多模块module的，而且可以多级嵌套
+         4. 预配置
+            1. profile
+         5. 构建语法 XML  POM
+      3. 使用 mvn
    2. MVNW
-      1. 解决问题
-      2. 生成
-      3. 使用
+      1. 解决问题 mvnw是为了解决本地没有maven或者不满足版本要求使用的，使用时会自动下载对应的maven版本进行上面的生命周期操作和插件操作
+      2. 生成 maven官方未提供生成，不过也基本上不用担心这个我用了2年基本没发现不兼容，可能是现在maven整体定型和稳定了
+      3. 使用 mvnw 加上原来mvn命令即可
+   
 2. Gradle
    1. Gradle使用
       1. 创建项目
+      
+         1. basic
+         2. java
+         3. groovy
+         4. kotlin 
+         5. cpp
+         6. swift
+      
       2. 生命周期
+      
+         1. ### Initialization
+      
+         2. ### Configuration
+      
+         3. ### Execution
+      
       3. basic project
+      
       4. 插件
+      
       5. 多模块
+      
+      6. 构建语法
+      
+         1. Groovy DSL
+         2. Kotlin DSL
    2. Gradlew
-      1. 解决问题
-      2. 生成
-      3. 使用
+      1. 解决问题 同 mvnw，gradle本身可以生成，gradle每个大版本都有API变化，所以为了防止不兼容所以经常使用这个
+      2. 生成 gradle wrapper
+      3. 使用 gradlew 加上gradle基本命令
+   
+3. Maven和Gradle对比
+
+   1. Maven 约束规范严格，插件多，省资源，因为使用XML约定，所以语法上比较啰嗦
+   2. Gradle 语法灵活，构建快，但是冷启动慢，大项目因为要常驻一个java后台，所以比较费内存，小内存慎用，使用Groovy或者Kotlin的定制DSL语法，使用灵活高效，可以使用必要的编程特点实现
 
 ## 6.框架与技术栈内容
 
