@@ -548,13 +548,32 @@
    1. yum (红帽系，cent os,federa,rhel)
    2. apt（debain系，debain，Ubuntu）
 4. 账户与授权
-   1. groupadd 添加用户组
-   2. useradd 添加账户
+   1. group 用户组
+      1. groupadd
+      2. groupdel
+      3. groupmod
+   2. user 添加账户
+      1. useradd
+      2. userdel
+      3. usermod
    3. chmod 授权
+      1. 三组RWX 
+         1. 用户
+         2. 组
+         3. 同组
+      2. 使用
    4. chown 授权所属组等
 5. 压缩与解压缩
    1. tar
+      1. 参数
+         1. -c 创建压缩包
+         2. -x 解压缩  
+         3. -z tar.gz
+         4. -j tar.bz
+         5. -f 文件名
+         6. -O 输出目录
    2. zip
+      1. 安装unzip
    3. rar
 6. 打包镜像，不过现在主要是容器化了
    1. 
