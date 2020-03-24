@@ -588,7 +588,19 @@
 
 ## 4.Rancher
 
-## 5.Serverless 无服务架构 Knative 、Istio、Kubernetes 
+## 5.Serverless 无服务架构 Knative 、Istio、Kubernetes、Linkerd
+
+# 部署结构
+
+1. 集中式
+   1. 全集中
+   2. 垂直分离
+   3. 集群负载均衡
+   4. 垂直分离+集群负载均衡
+2. 分布式
+   1. SOA
+   2. MSA
+   3. FSA（Serverless 核心点）
 
 # JS与前端学习
 
