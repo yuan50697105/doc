@@ -204,6 +204,7 @@
 1. Apache Commons 主要是一些方便的工具集
 2. Jadd 工具及扩展
 3. Google Guava 主要是集合，缓存扩展，功能大量使用建造者模式
+4. Hutool国内集成不错的
 
 ## 3.Java APP
 
@@ -216,15 +217,28 @@
             2. Spring Webflux
          3. Spring Cloud
             1. 微服务应用
-            2. Spring Cloud Data Flow ETL工具
+            2. Spring Cloud Data Flow —— ETL工具
+            3. Spring Cloud Function —— Serverless 
          4. Spring 生态圈
             1. Spring Data
+               1. Spring Data JDBC
+               2. Spring  Data JPA
             2. Spring Security
             3. Spring Cache
             4. Spring Session
             5. Spring Task
             6. Spring AMQP
+            7. Spring Kafka
+         5. 技术栈
+            1. Spring Servlet
+            2. Spring Reactor
       2. Mybatis
+         1. 基本使用
+         2. 功能扩展（拦截器，插件机制）
+         3. 常用扩展
+            1. Pagehelper
+            2. TkMapper
+            3. Mybatis Plus
       3. Hibernate
 2. 大数据
    1. Hadoop
@@ -242,6 +256,7 @@
       1. Java API 、Scala API
       2. Flink Stream
       3. Flink SQL
+   4. Solr与ES
 3. Android
    1. Java 和 Kotlin
 4. 其他扩展
@@ -257,12 +272,24 @@
 2. Kotlin
    1. 由目前最流行的Java IDE工具IDEA的开发商Jetbrain开发的语言，推出之后得到谷歌深度支持成为安卓第一开发语言，而且Spring官方也深度支持，另外很多其他框架也在深度支持，所以现在做java的不单单是学习Java一种语言了，必要时候也得学习下Kotlin，他和Java是100%兼容的，所以基本上能够无缝使用java的依赖库，可以使用Maven和Gradle构建环境，不过比较建议使用Gradle构建
    2. 相比Java 最大的进步主要是协程结束，还有一些灵活定义
+   3. Kotlin生态
+      1. Kotlin JVM
+         1. 也就是在JVM上运行
+      2. Kotlin JS
+         1. 使用Kotlin JVM语法配置JS和TS的API实现，可以在浏览器和Node上运行
+      3. Kotlin Native（试验中）
+         1. 主要是面向无虚拟机环境使用，比如IOS
+      4. Kotlin Data Science（新增）
+         1. 这个是新增功能，开始挑战Python
+      5. 总结，不服就干，生死看淡
 3. Scala
    1. 一个高扩展JVM语言，其实还有JS版本，不过主要是使用JVM版本，这个语言灵活度很高，不过有些地方概念深，不好入门，入门的话灵活度很强，就是概念多，灵活度高，所以入门难，主要是用在Spark分布式计算上
    2. 优势是高扩展
+   3. 国内除了使用在Spark上，其他很少使用
 4. Groovy
    1. JVM脚本语言，作者也是看着Java表达繁琐，所以想像JS那样简单直接，所以做了Groovy，不过现在Groovy这个语言用的很少了
    2. 加入函数式语法和模板语法
+   3. 当前现状，除了Gradle 和Grails 其他的平台很少使用了
 
 ## 5.构建与依赖管理工具
 
@@ -333,11 +360,11 @@
       
       2. 生命周期
       
-         1. ### Initialization
+         1. Initialization
       
-         2. ### Configuration
+         2. Configuration
       
-         3. ### Execution
+         3. Execution
       
       3. basic project
       
@@ -507,12 +534,28 @@
    5. Ubuntu 最流行的桌面Linux
    6. 区别红帽和Debian是两个不同的大发行版，因为内部实现不相同
 2. 基础命令
-   1. 
+   1. mv 移动文件或者重命名问价
+      1. mv 源文件或者目录 新文件名或者目录
+   2. cp 拷贝文件
+      1. cp 源文件或者目录 新文件或者目录
+   3. rm 删除
+      1. -r 删除目录
+      2. -f 强制删除
+      3. 常用 rm -rf 组合使用，但是切记不要早root权限下使用 rm -rf /*
+   4. ln 软链接（与windows的快捷方式一样就是个指针）
 3. 安装软件
-   1. 
+   1. yum (红帽系，cent os,federa,rhel)
+   2. apt（debain系，debain，Ubuntu）
 4. 账户与授权
-   1. 
-5. 打包镜像，不过现在主要是容器化了
+   1. groupadd 添加用户组
+   2. useradd 添加账户
+   3. chmod 授权
+   4. chown 授权所属组等
+5. 压缩与解压缩
+   1. tar
+   2. zip
+   3. rar
+6. 打包镜像，不过现在主要是容器化了
    1. 
 
 # 持续集成
