@@ -229,6 +229,10 @@
             5. Spring Task
             6. Spring AMQP
             7. Spring Kafka
+            8. Spring Boot 
+               1. 基础组件
+               2. 自定义Starter
+                  1. https://blog.csdn.net/vbirdbest/article/details/79863883
          5. 技术栈
             1. Spring Servlet
             2. Spring Reactor
