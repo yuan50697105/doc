@@ -646,6 +646,14 @@
 
 ### 	6.Angular
 
+### 7.跨平台
+
+Cordova	
+
+Electron
+
+
+
 ## 5.WASM（第四标准，用于二进制传输）
 
 # Dart与Flutter
